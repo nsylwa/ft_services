@@ -1,0 +1,9 @@
+minikube start --vm-driver=virtualbox
+eval $(minikube docker-env)
+
+kubectl apply -f ./srcs/nginx/nginx.yaml
+kubectl get pods
+kubectl logs nginx
+kubectl delete pods nginx
+
+ssh -p 22 nsylwa@192.168.99.100
